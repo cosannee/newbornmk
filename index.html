@@ -159,19 +159,6 @@ a:focus-visible{outline:3px solid var(--cool-deep);outline-offset:3px;border-rad
 .relic h2{margin-bottom:10px}
 .relic p{font-size:16.5px;color:var(--text-2);line-height:1.6}
 
-/* Photo placeholder */
-.photo-ph{
-  background:var(--card-cool);
-  border:2px dashed var(--cool);
-  border-radius:var(--r);
-  min-height:260px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;color:var(--cool-deep);gap:8px;padding:34px 22px;
-}
-.photo-ph .ico{font-size:38px;line-height:1}
-.photo-ph .cap{font-weight:600;font-size:15px;color:var(--cool-deep)}
-.photo-ph .sub{font-size:13px;color:var(--text-2)}
-
 /* Reusable image placeholder — заменяется реальным <img> внутри */
 .img-ph{
   position:relative;width:100%;border-radius:var(--r);overflow:hidden;
@@ -188,6 +175,7 @@ a:focus-visible{outline:3px solid var(--cool-deep);outline-offset:3px;border-rad
 .img-ph:has(img){border:1px solid var(--line);padding:0}
 .img-ph:has(img) .ico,.img-ph:has(img) .cap,.img-ph:has(img) .sub{display:none}
 .img-hero{aspect-ratio:4/5;max-width:340px;margin:22px auto 0}
+.img-main{aspect-ratio:7/5;max-width:640px;margin:0 auto}
 
 /* Gallery */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -373,10 +361,8 @@ footer .logo-ph{margin-bottom:12px}
 <!-- ░░░ 4. PHOTO PLACEHOLDER ░░░ -->
 <section style="padding-top:0">
   <div class="wrap reveal">
-    <div class="photo-ph" role="img" aria-label="Место для фотографии вашего Мишки">
-      <span class="ico" aria-hidden="true">📷</span>
-      <span class="cap">место для фото вашего Мишки</span>
-      <span class="sub">главный визуал — позже заменим реальным фото</span>
+    <div class="img-ph img-main">
+      <img src="main.png" alt="Мишка Марковки рядом с детьми, читающими книгу перед сном">
     </div>
   </div>
 </section>
