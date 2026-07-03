@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Марковка — МК по пошиву новорождённой игрушки</title>
+<meta name="description" content="Онлайн мастер-класс, на котором вы своими руками создадите Мишку с весом и ростом вашего новорождённого. Те самые, первые мерки.">
+<!-- OG / соцсети -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Марковка — МК по пошиву Мишки по первым меркам малыша">
+<meta property="og:description" content="Онлайн мастер-класс: своими руками создайте Мишку с весом и ростом вашего новорождённого. Те самые, первые мерки.">
+<meta property="og:locale" content="ru_RU">
+<!-- ▼ OG-картинка для превью в Instagram/Telegram. Загрузите изображение 1200×630 (мама с Мишкой)
+     на хостинг или в тот же каталог, где лежит страница, и впишите ПОЛНЫЙ адрес ниже.
+     Пример: https://markovka.ru/og.jpg  Пока стоит заглушка. -->
+<meta property="og:image" content="https://ЗАМЕНИТЕ-НА-АДРЕС/markovka-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>🧸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF8F5;
+  --cool:#B0C4DE;          /* холодный акцент */
+  --cool-deep:#5F7F96;     /* глубокий холодный — текст/контраст */
+  --card:#FFFFFF;
+  --card-cool:#F2F7FA;     /* голубоватая карточка */
+  --warm:#F3ECE4;          /* тёплая беж/пудра плашка */
+  --warm-line:#D8C3B0;     /* акцентная тёплая линия */
+  --text:#3F4750;
+  --text-2:#6B747D;
+  --line:#ECEAE4;          /* тонкая рамка карточек */
+  --r:16px;
+  --r-sm:12px;
+  --sh:0 4px 20px rgba(63,71,80,.05);
+  --sh-soft:0 2px 12px rgba(63,71,80,.04);
+  --maxw:680px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Golos Text',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-weight:400;
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+section{padding:42px 0}
+
+/* Typography */
+h1,h2,h3{font-family:'Golos Text',sans-serif;color:var(--text);line-height:1.2}
+h1{font-size:clamp(22px,4.2vw,31px);font-weight:800;letter-spacing:.2px}
+h2{font-size:clamp(20px,3.2vw,27px);font-weight:700;letter-spacing:.1px}
+h3{font-size:17px;font-weight:700}
+p{margin:0 0 14px}
+p:last-child{margin-bottom:0}
+.lead{font-size:16px;color:var(--text-2);line-height:1.6}
+.eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:var(--cool-deep);margin-bottom:11px;
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Golos Text',sans-serif;font-weight:600;font-size:15px;
+  padding:13px 30px;border-radius:100px;border:none;cursor:pointer;
+  text-decoration:none;line-height:1.2;text-align:center;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.btn-primary{background:var(--cool-deep);color:#fff;box-shadow:0 6px 18px rgba(95,127,150,.24)}
+.btn-primary:hover{background:#547189;transform:translateY(-1px);box-shadow:0 9px 22px rgba(95,127,150,.3)}
+.btn-warm{background:var(--warm-line);color:#4a3f30;box-shadow:0 6px 18px rgba(216,195,176,.36)}
+.btn-warm:hover{background:#cbb49f;transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--cool-deep);outline-offset:3px}
+a:focus-visible{outline:3px solid var(--cool-deep);outline-offset:3px;border-radius:4px}
+
+/* Logo placeholder (real logo added later) */
+.logo-ph{
+  display:inline-flex;align-items:center;gap:7px;
+  border:1px dashed var(--cool);background:#fff;
+  color:var(--cool-deep);font-size:11px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:7px 15px;border-radius:9px;
+}
+.logo-ph::before{content:"◇";font-size:12px;line-height:1}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:38px 0 46px;
+  background:radial-gradient(120% 80% at 50% -10%,#F2F7FA 0%,var(--bg) 62%);
+}
+.hero h1{
+  margin:20px auto 16px;max-width:none;
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  text-transform:uppercase;line-height:1;
+}
+.ht-main{
+  font-weight:800;
+  font-size:clamp(19.8px,5.4vw,41.4px);
+  letter-spacing:.5px;
+  line-height:1;
+  white-space:nowrap;
+}
+.ht-sub{
+  font-weight:500;
+  font-size:clamp(9.45px,2.115vw,15.3px);
+  letter-spacing:.3em;
+  line-height:1.1;
+  color:var(--text);
+  white-space:nowrap;
+  /* небольшой сдвиг влево компенсирует трекинг последней буквы */
+  padding-left:.3em;
+}
+.hero .lead{
+  /* ширина блока повторяет ширину заголовка-локапа */
+  max-width:min(calc(99px + 41.4vw),504px);margin:0 auto 24px;
+  text-align:justify;text-align-last:center;
+  hyphens:auto;-webkit-hyphens:auto;   /* мягкие переносы убирают «реки» пробелов */
+  font-size:14px;line-height:1.65;
+}
+@media (max-width:640px){
+  .ht-sub{letter-spacing:.2em;padding-left:.2em}
+}
+.tags{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+  max-width:560px;margin:0 auto 26px;
+}
+.tag{
+  display:inline-flex;align-items:center;
+  background:var(--card);border:1px solid #E3ECF2;
+  color:var(--cool-deep);font-size:13px;font-weight:500;
+  padding:7px 14px;border-radius:100px;
+  line-height:1.3;
+}
+
+/* Warm plate (legend / final) */
+.warm-plate{
+  background:var(--warm);
+  border-radius:var(--r);
+  border-left:4px solid var(--warm-line);
+  padding:30px clamp(22px,4vw,38px);
+  box-shadow:var(--sh-soft);
+}
+.warm-plate .eyebrow{color:#a98d6f}
+
+/* Compact centered block */
+.relic{text-align:center;max-width:52ch;margin:0 auto}
+.relic h2{margin-bottom:10px}
+.relic p{font-size:16.5px;color:var(--text-2);line-height:1.6}
+
+/* Photo placeholder */
+.photo-ph{
+  background:var(--card-cool);
+  border:2px dashed var(--cool);
+  border-radius:var(--r);
+  min-height:260px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;color:var(--cool-deep);gap:8px;padding:34px 22px;
+}
+.photo-ph .ico{font-size:38px;line-height:1}
+.photo-ph .cap{font-weight:600;font-size:15px;color:var(--cool-deep)}
+.photo-ph .sub{font-size:13px;color:var(--text-2)}
+
+/* Reusable image placeholder — заменяется реальным <img> внутри */
+.img-ph{
+  position:relative;width:100%;border-radius:var(--r);overflow:hidden;
+  background:var(--card-cool);border:2px dashed var(--cool);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;color:var(--cool-deep);gap:6px;padding:24px 16px;
+  aspect-ratio:3/2;
+}
+.img-ph .ico{font-size:32px;line-height:1}
+.img-ph .cap{font-weight:600;font-size:13.5px;color:var(--cool-deep)}
+.img-ph .sub{font-size:12px;color:var(--text-2)}
+.img-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* когда вставлено реальное фото — рамка и подпись убираются автоматически */
+.img-ph:has(img){border:1px solid var(--line);padding:0}
+.img-ph:has(img) .ico,.img-ph:has(img) .cap,.img-ph:has(img) .sub{display:none}
+.img-hero{aspect-ratio:4/5;max-width:340px;margin:22px auto 0}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gallery .img-ph{aspect-ratio:1/1;padding:14px 8px}
+.gallery .img-ph .ico{font-size:26px}
+
+/* Cards */
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:30px clamp(22px,4vw,34px);
+  box-shadow:var(--sh);
+}
+.card-cool{
+  background:var(--card-cool);
+  border:1px solid #E1EAF1;
+  border-radius:var(--r);
+  padding:28px clamp(22px,4vw,34px);
+  box-shadow:var(--sh-soft);
+}
+.card h2{margin-bottom:18px}
+
+/* Feature list */
+.features{list-style:none;display:flex;flex-direction:column;gap:15px}
+.features li{display:flex;gap:13px;align-items:flex-start}
+.features .mk{
+  flex:0 0 auto;width:28px;height:28px;border-radius:50%;
+  background:var(--card-cool);color:var(--cool-deep);
+  display:flex;align-items:center;justify-content:center;font-size:13px;margin-top:2px;
+  border:1px solid #E1EAF1;
+}
+.features .ft-t{font-weight:600;color:var(--text);display:block;margin-bottom:1px;font-size:15.5px}
+.features .ft-d{color:var(--text-2);font-size:14.5px;line-height:1.55}
+.features li.bonus .mk{background:var(--warm);color:#a98d6f;border-color:var(--warm-line)}
+.bonus-plate{
+  margin-top:6px;background:var(--warm);border-left:3px solid var(--warm-line);
+  border-radius:9px;padding:9px 13px;font-size:13.5px;color:#5c5040;font-weight:600;
+}
+
+/* Steps — таймлайн */
+.steps{list-style:none;counter-reset:step;max-width:520px;margin:0 auto}
+.steps li{position:relative;display:flex;gap:15px;align-items:flex-start;padding:0 0 20px 0}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{
+  counter-increment:step;content:counter(step);
+  flex:0 0 auto;width:30px;height:30px;border-radius:50%;z-index:1;
+  background:var(--card-cool);color:var(--cool-deep);
+  font-weight:700;font-size:14px;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+  border:1px solid #DDE8F0;
+}
+/* соединительная линия между точками */
+.steps li:not(:last-child)::after{
+  content:"";position:absolute;left:14px;top:32px;bottom:2px;width:2px;
+  background:#DCE7F0;
+}
+.steps .stp-t{font-weight:600;color:var(--text);display:block;margin-bottom:1px;font-size:15.5px}
+.steps .stp-d{color:var(--text-2);font-size:14.5px;line-height:1.55}
+.steps li.key::before{background:var(--cool-deep);color:#fff;border-color:var(--cool-deep)}
+.steps li.key .stp-t{color:var(--cool-deep)}
+.key-chip{
+  display:inline-block;margin-left:8px;vertical-align:middle;
+  background:var(--warm);border:1px solid var(--warm-line);color:#7a6a52;
+  font-size:10.5px;font-weight:600;letter-spacing:.3px;
+  padding:2px 8px;border-radius:100px;
+}
+
+/* Price */
+.price-card{text-align:center}
+.price-hl{
+  background:linear-gradient(180deg,#F2F7FA 0%,#FFFFFF 70%);
+  border:1.5px solid #D6E3EE;
+  box-shadow:0 10px 34px rgba(95,127,150,.12);
+}
+.price-old{font-size:19px;font-weight:600;color:var(--text-2);line-height:1;
+  text-decoration:line-through;text-decoration-color:#cBae9f;text-decoration-thickness:2px;}
+.price-amount{font-weight:800;font-size:clamp(44px,9.5vw,62px);color:var(--cool-deep);line-height:1;margin:3px 0 2px;letter-spacing:-.5px}
+.price-badge{
+  display:inline-block;background:var(--warm);border:1px solid var(--warm-line);
+  color:#6b5c48;font-weight:600;font-size:14px;
+  padding:8px 16px;border-radius:100px;margin:12px 0 18px;
+}
+.price-incl{list-style:none;text-align:left;max-width:330px;margin:0 auto 20px;
+  display:flex;flex-direction:column;gap:8px}
+.price-incl li{font-size:14px;color:var(--text);padding-left:24px;position:relative;line-height:1.4}
+.price-incl li::before{content:"✓";position:absolute;left:2px;top:0;color:var(--cool-deep);font-weight:800}
+.price-note{color:var(--text-2);font-size:13.5px;max-width:44ch;margin:0 auto 20px;line-height:1.55}
+
+/* Sticky mobile CTA */
+.cta-sticky{display:none}
+@media (max-width:640px){
+  .cta-sticky{
+    display:flex;align-items:center;justify-content:center;gap:6px;
+    position:fixed;left:12px;right:12px;bottom:12px;z-index:90;
+    background:var(--cool-deep);color:#fff;font-weight:600;font-size:15px;
+    padding:14px;border-radius:100px;text-decoration:none;
+    box-shadow:0 8px 26px rgba(95,127,150,.34);
+  }
+  body{padding-bottom:78px}
+}
+
+/* Terms */
+.terms{text-align:center}
+.terms p{font-size:13px;color:var(--text-2);line-height:1.65;max-width:58ch;margin:0 auto}
+.terms a{color:var(--cool-deep);text-decoration:underline;text-underline-offset:2px}
+
+/* Final */
+.final{text-align:center}
+.final .lead{max-width:34ch;margin:10px auto 22px;font-size:16.5px}
+
+/* Footer */
+footer{text-align:center;padding:38px 22px 48px;color:var(--text-2);font-size:14px}
+footer .logo-ph{margin-bottom:12px}
+
+/* Scroll reveal (respects reduced motion) */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .btn,.btn:hover{transition:none;transform:none}
+}
+
+/* Mobile */
+@media (max-width:640px){
+  section{padding:36px 0}
+  .wrap{padding:0 18px}
+  .btn{width:100%;padding:14px 24px}
+  .card,.card-cool,.warm-plate{padding:24px 20px}
+  .steps li{gap:12px}
+  .tag{font-size:12.5px}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- ░░░ 1. HERO ░░░ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="logo-ph" aria-label="Логотип Марковки">Марковка</div>
+    <h1>
+      <span class="ht-main">МК по пошиву Мишки</span>
+      <span class="ht-sub">по первым меркам вашего малыша</span>
+    </h1>
+    <p class="lead">Онлайн мастер-класс, на котором вы своими руками создадите Мишку с весом и ростом вашего новорождённого. Те самые, первые мерки.</p>
+    <div class="tags">
+      <span class="tag">Персональный расчёт под вес малыша</span>
+      <span class="tag">Пошагово</span>
+      <span class="tag">Выкройка ромпера и воротничка в подарок</span>
+      <span class="tag">Даже если держите иголку впервые</span>
+    </div>
+    <a class="btn btn-primary" href="#price">Хочу сшить Мишку</a>
+    <div class="img-ph img-hero">
+      <img src="dasha.png" alt="Дарья, автор Марковки, со своим Мишкой">
+    </div>
+  </div>
+</header>
+
+<!-- ░░░ 2. LEGEND (первое лицо, Дарья) ░░░ -->
+<section>
+  <div class="wrap reveal">
+    <div class="warm-plate">
+      <p class="eyebrow">История</p>
+      <h2>С чего началась Марковка</h2>
+      <p>Меня зовут Дарья. Марковка родилась из любви и из мгновения, которое проходит слишком быстро. Название пришло от имени моего сына — Марка, которого я ласково звала Марковкой.</p>
+      <p>Когда на свет появился второй малыш, была неделя, когда я не могла взять его на руки и ощутить тот самый новорождённый вес — лёгкий, тёплый, умещающийся на ладони. Дети растут так быстро, что этот миг остаётся только воспоминанием.</p>
+      <p>Тогда родился первый Мишка — весом и ростом с моего новорождённого сына. Так Мишка отозвался в сердцах тысяч родителей. Потому что за ним — настоящая история, настоящая любовь и настоящее материнство. 🤍</p>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 3. RELIC (компактно) ░░░ -->
+<section>
+  <div class="wrap relic reveal">
+    <h2>Дети растут быстро. Слишком быстро.</h2>
+    <p>Мишка хранит тот самый вес — лёгкий, тёплый, умещающийся на ладони. Когда захочется вернуться в самое начало — он будет ждать.</p>
+  </div>
+</section>
+
+<!-- ░░░ 4. PHOTO PLACEHOLDER ░░░ -->
+<section style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="photo-ph" role="img" aria-label="Место для фотографии вашего Мишки">
+      <span class="ico" aria-hidden="true">📷</span>
+      <span class="cap">место для фото вашего Мишки</span>
+      <span class="sub">главный визуал — позже заменим реальным фото</span>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 5. WHAT'S INSIDE ░░░ -->
+<section>
+  <div class="wrap reveal">
+    <div class="card">
+      <p class="eyebrow">Комплект</p>
+      <h2>Всё, что нужно — уже внутри</h2>
+      <ul class="features">
+        <li>
+          <span class="mk" aria-hidden="true">📐</span>
+          <div><span class="ft-t">Персональный расчёт веса Мишки</span><span class="ft-d">Вводите вес и рост — все данные подстраиваются под вес вашего малыша. Считать почти ничего не нужно.</span></div>
+        </li>
+        <li class="bonus">
+          <span class="mk" aria-hidden="true">🤍</span>
+          <div>
+            <span class="ft-t">Выкройка ромпера и воротничка в подарок</span>
+            <span class="ft-d">Наряд для вашего Мишки.</span>
+            <div class="bonus-plate">🎁 Бонус — включён в мастер-класс бесплатно</div>
+          </div>
+        </li>
+        <li>
+          <span class="mk" aria-hidden="true">🎬</span>
+          <div><span class="ft-t">Пошаговый мастер-класс</span><span class="ft-d">Каждый этап за ручку. Видео-сопровождение.</span></div>
+        </li>
+        <li>
+          <span class="mk" aria-hidden="true">🧵</span>
+          <div><span class="ft-t">Список материалов</span><span class="ft-d">С прямыми ссылками — покупаете в пару кликов.</span></div>
+        </li>
+        <li>
+          <span class="mk" aria-hidden="true">💬</span>
+          <div><span class="ft-t">Обратная связь</span><span class="ft-d">Напишете — разберёмся вместе.</span></div>
+        </li>
+        <li>
+          <span class="mk" aria-hidden="true">♾️</span>
+          <div><span class="ft-t">PDF навсегда</span><span class="ft-d">Доступ бессрочный, остаётся с вами.</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 6. FOR BEGINNERS ░░░ -->
+<section>
+  <div class="wrap reveal">
+    <div class="card-cool">
+      <p class="eyebrow">Для новичков</p>
+      <h2>Для вас, даже если вы никогда не шили</h2>
+      <p class="lead" style="color:var(--text)">Мишку сошьют и те, у кого есть машинка, и те, у кого только иголка в руках. Здесь не нужен опыт — нужны терпение, забота и желание сохранить этот миг. Всё остальное я показываю за руку.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 7. STEPS ░░░ -->
+<section>
+  <div class="wrap reveal">
+    <p class="eyebrow" style="text-align:center">Путь</p>
+    <h2 style="text-align:center;margin-bottom:22px">7 шагов от ткани до объятия</h2>
+    <ol class="steps">
+      <li><div><span class="stp-t">Раскрой</span><span class="stp-d">Переносим персональные выкройки на ткань.</span></div></li>
+      <li><div><span class="stp-t">Сшивание</span><span class="stp-d">Машинкой или вручную — справится каждый.</span></div></li>
+      <li><div><span class="stp-t">Выворачивание</span><span class="stp-d">Мишка обретает форму.</span></div></li>
+      <li><div><span class="stp-t">Лицо</span><span class="stp-d">Глазки, носик, бровки. Здесь он становится собой.</span></div></li>
+      <li><div><span class="stp-t">Набивка</span><span class="stp-d">По расчёту под вашего малыша.</span></div></li>
+      <li class="key"><div><span class="stp-t">Вес и рост<span class="key-chip">важный шаг</span></span><span class="stp-d">Взвешиваем и подгоняем до точных мерок. Именно этот шаг делает его вашим.</span></div></li>
+      <li><div><span class="stp-t">Сборка</span><span class="stp-d">Пришиваем ручки и голову. Возьмите на руки — и почувствуйте 🤍</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ░░░ 7½. GALLERY (Мишки Дарьи) ░░░ -->
+<section>
+  <div class="wrap reveal">
+    <p class="eyebrow" style="text-align:center">Галерея</p>
+    <h2 style="text-align:center;margin-bottom:8px">Таких Мишек уже обнимают</h2>
+    <p class="lead" style="text-align:center;max-width:48ch;margin:0 auto 22px">Мишки, которых Дарья сшила на заказ для мам. Ваш будет таким же — только с мерками вашего малыша.</p>
+    <div class="gallery">
+      <div class="img-ph"><img src="mishka-1.jpeg" alt="Мишка Марковки, сшитый на заказ"></div>
+      <div class="img-ph"><img src="mishka-2.jpeg" alt="Мишка Марковки, сшитый на заказ"></div>
+      <div class="img-ph"><img src="mishka-3.jpeg" alt="Мишка Марковки, сшитый на заказ"></div>
+      <div class="img-ph"><img src="mishka-4.jpeg" alt="Мишка Марковки, сшитый на заказ"></div>
+      <div class="img-ph"><img src="mishka-5.JPG" alt="Мишка Марковки, сшитый на заказ"></div>
+      <div class="img-ph"><img src="mishka-6.JPG" alt="Мишка Марковки, сшитый на заказ"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 8. PRICE ░░░ -->
+<section id="price">
+  <div class="wrap reveal">
+    <div class="card price-card price-hl">
+      <p class="eyebrow">Ваша цена по листу ожидания</p>
+      <div class="price-old">2 500 ₽</div>
+      <div class="price-amount">1 700 ₽</div>
+      <div class="price-badge">Вы уже в списке ожидания 🤍</div>
+      <ul class="price-incl">
+        <li>Персональные выкройки под мерки малыша</li>
+        <li>Выкройка ромпера и воротничка в подарок</li>
+        <li>Пошаговый мастер-класс с видео-сопровождением</li>
+        <li>Список материалов с прямыми ссылками</li>
+        <li>Обратная связь от Дарьи</li>
+        <li>PDF навсегда — доступ бессрочный</li>
+      </ul>
+      <p class="price-note">Доступ приходит на почту сразу после оплаты. PDF остаётся с вами навсегда. Открытых продаж пока нет — цена действует для участников листа ожидания.</p>
+      <a class="btn btn-primary" href="#" rel="noopener">Забрать за 1 700 ₽</a>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 9. TERMS ░░░ -->
+<section style="padding-top:0" class="terms">
+  <div class="wrap reveal">
+    <p>Мастер-класс — цифровой продукт. Доступ предоставляется бессрочно и не подлежит возврату после выдачи. Оплачивая, вы соглашаетесь с <a href="#">офертой</a> и <a href="#">политикой обработки персональных данных</a>.</p>
+  </div>
+</section>
+
+<!-- ░░░ 10. FINAL ░░░ -->
+<section>
+  <div class="wrap reveal">
+    <div class="warm-plate final">
+      <h2>Сшейте объятие своими руками</h2>
+      <p class="lead">Тот самый вес. Тот самый первый миг. Теперь — в ваших руках.</p>
+      <a class="btn btn-warm" href="#price">Хочу ощутить первые объятия снова</a>
+    </div>
+  </div>
+</section>
+
+<a class="cta-sticky" href="#price">Забрать за 1 700 ₽ 🤍</a>
+
+<footer>
+  <div class="logo-ph" aria-label="Логотип Марковки">Марковка</div>
+  <div>С любовью, Дарья 🤍</div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.classList.add('in');});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
+
+</body>
+</html>
