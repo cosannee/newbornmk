@@ -263,6 +263,14 @@ a:focus-visible{outline:3px solid var(--cool-deep);outline-offset:3px;border-rad
 .price-incl li::before{content:"✓";position:absolute;left:2px;top:0;color:var(--cool-deep);font-weight:800}
 .price-note{color:var(--text-2);font-size:13.5px;max-width:44ch;margin:0 auto 20px;line-height:1.55}
 
+/* Consent checkbox */
+.consent{display:flex;align-items:flex-start;gap:9px;max-width:330px;margin:0 auto 10px;text-align:left}
+.consent input[type=checkbox]{flex:0 0 auto;width:18px;height:18px;margin-top:2px;accent-color:var(--cool-deep);cursor:pointer}
+.consent label{font-size:12.5px;color:var(--text-2);line-height:1.5;cursor:pointer}
+.consent a{color:var(--cool-deep);text-decoration:underline;text-underline-offset:2px}
+.consent-warn{display:none;color:#8a6a4a;font-size:12px;max-width:330px;margin:0 auto 14px;text-align:left}
+.consent-warn.show{display:block}
+
 /* Sticky mobile CTA */
 .cta-sticky{display:none}
 @media (max-width:640px){
@@ -288,6 +296,8 @@ a:focus-visible{outline:3px solid var(--cool-deep);outline-offset:3px;border-rad
 /* Footer */
 footer{text-align:center;padding:38px 22px 48px;color:var(--text-2);font-size:14px}
 footer .logo-ph{margin-bottom:12px}
+.legal{margin-top:16px;font-size:12px;color:var(--text-2);line-height:1.7;max-width:44ch;margin-left:auto;margin-right:auto}
+.legal a{color:var(--cool-deep);text-decoration:underline;text-underline-offset:2px}
 
 /* Scroll reveal (respects reduced motion) */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
@@ -320,7 +330,7 @@ footer .logo-ph{margin-bottom:12px}
       <span class="ht-main">МК по пошиву Мишки</span>
       <span class="ht-sub">по первым меркам вашего малыша</span>
     </h1>
-    <p class="lead">Онлайн мастер-класс, на котором вы своими руками создадите Мишку с весом и ростом вашего новорождённого. Те самые, первые мерки.</p>
+    <p class="lead">Мишка весом и ростом с вашим новорождённым. Те самые первые мерки — в ваших руках навсегда.</p>
     <div class="tags">
       <span class="tag">Персональный расчёт под вес малыша</span>
       <span class="tag">Пошагово</span>
@@ -340,9 +350,9 @@ footer .logo-ph{margin-bottom:12px}
     <div class="warm-plate">
       <p class="eyebrow">История</p>
       <h2>С чего началась Марковка</h2>
-      <p>Меня зовут Дарья. Марковка родилась из любви и из мгновения, которое проходит слишком быстро. Название пришло от имени моего сына — Марка, которого я ласково звала Марковкой.</p>
-      <p>Когда на свет появился второй малыш, была неделя, когда я не могла взять его на руки и ощутить тот самый новорождённый вес — лёгкий, тёплый, умещающийся на ладони. Дети растут так быстро, что этот миг остаётся только воспоминанием.</p>
-      <p>Тогда родился первый Мишка — весом и ростом с моего новорождённого сына. Так Мишка отозвался в сердцах тысяч родителей. Потому что за ним — настоящая история, настоящая любовь и настоящее материнство. 🤍</p>
+      <p>Меня зовут Дарья. Марковка — от имени моего сына Марка, которого я ласково звала Марковкой.</p>
+      <p>Когда на свет появился второй малыш, была неделя, когда я не могла взять его на руки. Спустя год я всё ещё ощущала этот непрожитый момент — тот самый вес, который так и не оказался в моих объятиях.</p>
+      <p>Именно тогда я сшила первого Мишку — весом и ростом с моим сыном. Чтобы этот миг никуда не ушёл. 🤍</p>
     </div>
   </div>
 </section>
@@ -410,7 +420,7 @@ footer .logo-ph{margin-bottom:12px}
     <div class="card-cool">
       <p class="eyebrow">Для новичков</p>
       <h2>Для вас, даже если вы никогда не шили</h2>
-      <p class="lead" style="color:var(--text)">Мишку сошьют и те, у кого есть машинка, и те, у кого только иголка в руках. Здесь не нужен опыт — нужны терпение, забота и желание сохранить этот миг. Всё остальное я показываю за руку.</p>
+      <p class="lead" style="color:var(--text)">Не нужно уметь шить. Нужно только хотеть сохранить этот момент. Я проведу вас за руку через каждый шаг — от первого стежка до готового Мишки.</p>
     </div>
   </div>
 </section>
@@ -466,7 +476,12 @@ footer .logo-ph{margin-bottom:12px}
         <li>PDF навсегда — доступ бессрочный</li>
       </ul>
       <p class="price-note">Доступ приходит на почту сразу после оплаты. PDF остаётся с вами навсегда. Открытых продаж пока нет — цена действует для участников листа ожидания.</p>
-      <a class="btn btn-primary" href="#" rel="noopener">Забрать за 1 700 ₽</a>
+      <div class="consent">
+        <input type="checkbox" id="agree" aria-describedby="agreeWarn">
+        <label for="agree">Я ознакомлен(а) и согласен(на) с <a href="#">офертой</a> и <a href="#">политикой обработки персональных данных</a></label>
+      </div>
+      <p class="consent-warn" id="agreeWarn" role="alert">Пожалуйста, подтвердите согласие — поставьте галочку выше</p>
+      <a class="btn btn-primary" href="#price" rel="noopener" id="buyBtn">Забрать МК за 1 700 ₽</a>
     </div>
   </div>
 </section>
@@ -482,18 +497,22 @@ footer .logo-ph{margin-bottom:12px}
 <section>
   <div class="wrap reveal">
     <div class="warm-plate final">
-      <h2>Сшейте объятие своими руками</h2>
-      <p class="lead">Тот самый вес. Тот самый первый миг. Теперь — в ваших руках.</p>
-      <a class="btn btn-warm" href="#price">Хочу ощутить первые объятия снова</a>
+      <h2>Тот вес, который ни с чем не спутать</h2>
+      <p class="lead">Руки помнят. Дайте им возможность помнить всегда.</p>
+      <a class="btn btn-warm" href="#price">Хочу сшить своего Мишку</a>
     </div>
   </div>
 </section>
 
-<a class="cta-sticky" href="#price">Забрать за 1 700 ₽ 🤍</a>
+<a class="cta-sticky" href="#price">Забрать МК за 1 700 ₽ 🤍</a>
 
 <footer>
   <img class="logo-foot" src="logo.PNG" alt="Марковка">
   <div>С любовью, Дарья 🤍</div>
+  <div class="legal">
+    Исполнитель: Смирнова&nbsp;Дарья&nbsp;Андреевна · ИНН&nbsp;250910781480<br>
+    <a href="mailto:dasha.k510i@mail.ru">dasha.k510i@mail.ru</a>
+  </div>
 </footer>
 
 <script>
@@ -510,6 +529,23 @@ footer .logo-ph{margin-bottom:12px}
     });
   },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
   els.forEach(function(el){io.observe(el);});
+})();
+
+(function(){
+  var btn=document.getElementById('buyBtn');
+  var box=document.getElementById('agree');
+  var warn=document.getElementById('agreeWarn');
+  if(!btn||!box||!warn)return;
+  btn.addEventListener('click',function(e){
+    if(!box.checked){
+      e.preventDefault();
+      warn.classList.add('show');
+      box.focus();
+    }
+  });
+  box.addEventListener('change',function(){
+    if(box.checked)warn.classList.remove('show');
+  });
 })();
 </script>
 
