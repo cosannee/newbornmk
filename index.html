@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Марковка — МК по пошиву новорождённой игрушки</title>
-<meta name="description" content="Онлайн мастер-класс, на котором вы своими руками создадите Мишку с весом и ростом вашего новорождённого. Те самые, первые мерки.">
+<title>Марковка — создайте малыша по первым меркам вашего ребёнка</title>
+<meta name="description" content="Игрушка по росту и весу вашего малыша, каким он был в первые дни. Память, к которой можно прикоснуться.">
 <!-- OG / соцсети -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Марковка — МК по пошиву Мишки по первым меркам малыша">
-<meta property="og:description" content="Онлайн мастер-класс: своими руками создайте Мишку с весом и ростом вашего новорождённого. Те самые, первые мерки.">
+<meta property="og:title" content="Марковка — создайте малыша по первым меркам вашего ребёнка">
+<meta property="og:description" content="Игрушка по росту и весу вашего малыша в его самые первые дни. Иногда память можно взять на руки.">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:image" content="https://raw.githubusercontent.com/cosannee/newbornmk/main/og.jpg">
 <meta property="og:image:width" content="1192">
@@ -98,37 +98,15 @@ a:focus-visible{outline:3px solid var(--cool-deep);outline-offset:3px;border-rad
   padding:38px 0 46px;
   background:radial-gradient(120% 80% at 50% -10%,#F2F7FA 0%,var(--bg) 62%);
 }
-.hero h1{
-  margin:20px auto 16px;max-width:none;
-  display:flex;flex-direction:column;align-items:center;gap:7px;
-  text-transform:uppercase;line-height:1;
-}
-.ht-main{
-  font-weight:800;
-  font-size:clamp(19.8px,5.4vw,41.4px);
-  letter-spacing:.5px;
-  line-height:1;
-  white-space:nowrap;
-}
-.ht-sub{
-  font-weight:500;
-  font-size:clamp(9.45px,2.115vw,15.3px);
-  letter-spacing:.3em;
-  line-height:1.1;
-  color:var(--text);
-  white-space:nowrap;
-  /* небольшой сдвиг влево компенсирует трекинг последней буквы */
-  padding-left:.3em;
+.hero h1{margin:20px auto 16px;max-width:none;line-height:1}
+.hero-title-img{
+  display:block;width:100%;max-width:600px;height:auto;margin:0 auto;
 }
 .hero .lead{
-  /* ширина блока повторяет ширину заголовка-локапа */
-  max-width:min(calc(99px + 41.4vw),504px);margin:0 auto 24px;
+  max-width:400px;margin:0 auto 24px;
   text-align:justify;text-align-last:center;
-  hyphens:auto;-webkit-hyphens:auto;   /* мягкие переносы убирают «реки» пробелов */
-  font-size:14px;line-height:1.65;
-}
-@media (max-width:640px){
-  .ht-sub{letter-spacing:.2em;padding-left:.2em}
+  word-break:normal;overflow-wrap:normal;hyphens:none;   /* слова не разрываются */
+  font-size:15px;line-height:1.65;
 }
 .tags{
   display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
@@ -326,18 +304,15 @@ footer .logo-ph{margin-bottom:12px}
 <!-- ░░░ 1. HERO ░░░ -->
 <header class="hero">
   <div class="wrap">
-    <h1>
-      <span class="ht-main">МК по пошиву Мишки</span>
-      <span class="ht-sub">по первым меркам вашего малыша</span>
-    </h1>
-    <p class="lead">Мишка весом и ростом с вашим новорождённым. Те самые первые мерки — в ваших руках навсегда.</p>
+    <h1><img class="hero-title-img" src="top.png" alt="МК по пошиву новорождённого мишки — по первым меркам вашего малыша"></h1>
+    <p class="lead">Создайте малыша по первым меркам вашего ребёнка — игрушку, которая долгие годы будет хранить воспоминания о самых первых днях.</p>
     <div class="tags">
-      <span class="tag">Персональный расчёт под вес малыша</span>
-      <span class="tag">Пошагово</span>
-      <span class="tag">Выкройка ромпера и воротничка в подарок</span>
-      <span class="tag">Даже если держите иголку впервые</span>
+      <span class="tag">По росту и весу малыша</span>
+      <span class="tag">Первые мерки ребёнка</span>
+      <span class="tag">Наряд в подарок</span>
+      <span class="tag">Даже если не шили раньше</span>
     </div>
-    <a class="btn btn-primary" href="#price">Хочу сшить Мишку</a>
+    <a class="btn btn-primary" href="#price">Хочу создать своего малыша</a>
     <div class="img-ph img-hero">
       <img src="dasha.png" alt="Дарья, автор Марковки, со своим Мишкой">
     </div>
@@ -349,10 +324,11 @@ footer .logo-ph{margin-bottom:12px}
   <div class="wrap reveal">
     <div class="warm-plate">
       <p class="eyebrow">История</p>
-      <h2>С чего началась Марковка</h2>
-      <p>Меня зовут Дарья. Марковка — от имени моего сына Марка, которого я ласково звала Марковкой.</p>
-      <p>Когда на свет появился второй малыш, была неделя, когда я не могла взять его на руки. Спустя год я всё ещё ощущала этот непрожитый момент — тот самый вес, который так и не оказался в моих объятиях.</p>
-      <p>Именно тогда я сшила первого Мишку — весом и ростом с моим сыном. Чтобы этот миг никуда не ушёл. 🤍</p>
+      <h2>Когда хочется вернуться в самое начало</h2>
+      <p>Когда родился мой второй сын, была неделя, когда я не могла взять его на руки. Не могла ощутить тот самый вес — лёгкий, тёплый, умещающийся на ладони.</p>
+      <p>Прошёл год. Но внутри осталось что-то непрожитое. Желание прикоснуться к тому, чего тогда не случилось. Или прошло как мгновение.</p>
+      <p>Так и появился тот самый, первый мишка — ростом и весом моего малыша, каким он и был при рождении. Взять его на руки — и почувствовать то, что так сильно хотелось ощутить. Покачать его. И даже пустить слезу.</p>
+      <p>Этот мишка отозвался в сердцах тысяч родителей. Потому что за ним — настоящая история, настоящая любовь и настоящее материнство. И я счастлива, что теперь каждый сможет создать своего малыша своими любящими, тёплыми руками. 🤍</p>
     </div>
   </div>
 </section>
@@ -360,8 +336,8 @@ footer .logo-ph{margin-bottom:12px}
 <!-- ░░░ 3. RELIC (компактно) ░░░ -->
 <section>
   <div class="wrap relic reveal">
-    <h2>Дети растут быстро. Слишком быстро.</h2>
-    <p>Мишка хранит тот самый вес — лёгкий, тёплый, умещающийся на ладони. Когда захочется вернуться в самое начало — он будет ждать.</p>
+    <h2>Первые дни проходят слишком быстро</h2>
+    <p>То, что однажды было таким маленьким, вырастает за одно мгновение. Игрушка хранит тот самый вес — лёгкий, тёплый, умещающийся на ладони. Память, к которой можно вернуться и прикоснуться.</p>
   </div>
 </section>
 
@@ -383,23 +359,15 @@ footer .logo-ph{margin-bottom:12px}
       <ul class="features">
         <li>
           <span class="mk" aria-hidden="true">✓</span>
-          <div><span class="ft-t">Персональный расчёт веса Мишки</span><span class="ft-d">Вводите вес и рост — все данные подстраиваются под вес вашего малыша. Считать почти ничего не нужно.</span></div>
-        </li>
-        <li class="bonus">
-          <span class="mk" aria-hidden="true">✓</span>
-          <div>
-            <span class="ft-t">Выкройка ромпера и воротничка в подарок</span>
-            <span class="ft-d">Наряд для вашего Мишки.</span>
-            <div class="bonus-plate">Бонус — включён в мастер-класс</div>
-          </div>
+          <div><span class="ft-t">Расчёт под вес вашего малыша</span><span class="ft-d">Вводите рост и вес — и получаете, сколько гранулята нужно в каждую часть тела, чтобы игрушка весила ровно как ваш малыш. Считать почти ничего не нужно.</span></div>
         </li>
         <li>
           <span class="mk" aria-hidden="true">✓</span>
-          <div><span class="ft-t">Пошаговый мастер-класс</span><span class="ft-d">Каждый этап за ручку. Видео-сопровождение.</span></div>
+          <div><span class="ft-t">Каждый этап создания</span><span class="ft-d">Подробно показываю каждый этап — спокойно, с видео. Не каждый стежок, но весь путь целиком.</span></div>
         </li>
         <li>
           <span class="mk" aria-hidden="true">✓</span>
-          <div><span class="ft-t">Список материалов</span><span class="ft-d">С прямыми ссылками — покупаете в пару кликов.</span></div>
+          <div><span class="ft-t">Список материалов</span><span class="ft-d">С прямыми ссылками — где купить всё нужное. Что-то можно заменить, о важном расскажу ниже.</span></div>
         </li>
         <li>
           <span class="mk" aria-hidden="true">✓</span>
@@ -408,6 +376,14 @@ footer .logo-ph{margin-bottom:12px}
         <li>
           <span class="mk" aria-hidden="true">✓</span>
           <div><span class="ft-t">PDF навсегда</span><span class="ft-d">Доступ бессрочный, остаётся с вами.</span></div>
+        </li>
+        <li class="bonus">
+          <span class="mk" aria-hidden="true">✓</span>
+          <div>
+            <span class="ft-t">Выкройка ромпера и воротничка в подарок</span>
+            <span class="ft-d">Наряд для вашего малыша.</span>
+            <div class="bonus-plate">Бонус — включён в мастер-класс</div>
+          </div>
         </li>
         <li class="bonus">
           <span class="mk" aria-hidden="true">✓</span>
@@ -427,8 +403,20 @@ footer .logo-ph{margin-bottom:12px}
   <div class="wrap reveal">
     <div class="card-cool">
       <p class="eyebrow">Для новичков</p>
-      <h2>Для вас, даже если вы никогда не шили</h2>
-      <p class="lead" style="color:var(--text)">Не нужно уметь шить. Нужно только хотеть сохранить этот момент. Я проведу вас за руку через каждый шаг — от первого стежка до готового Мишки.</p>
+      <h2>Даже если вы не шили раньше</h2>
+      <p class="lead" style="color:var(--text)">Это не курс по базовому шитью — я не показываю каждый стежок. Но подробно провожу через каждый этап создания игрушки. Даже если вы не шили таких малышей раньше, вы сможете повторить весь путь — спокойно, шаг за шагом.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 6½. MATERIALS ░░░ -->
+<section style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="card">
+      <p class="eyebrow">Материалы</p>
+      <h2>Что понадобится</h2>
+      <p>Часть материалов можно заменить на то, что удобно вам. Но есть то, что важно для качества и безопасности готовой игрушки.</p>
+      <p>Главное — металлический гранулят: именно он передаёт настоящий вес малыша, тот самый, который так хочется почувствовать. Если для вас важен только внешний вид, его можно заменить мягким наполнителем — игрушка получится лёгкой, но такой же нежной.</p>
     </div>
   </div>
 </section>
@@ -444,7 +432,7 @@ footer .logo-ph{margin-bottom:12px}
       <li><div><span class="stp-t">Выворачивание</span><span class="stp-d">Мишка обретает форму.</span></div></li>
       <li><div><span class="stp-t">Лицо</span><span class="stp-d">Глазки, носик, бровки. Здесь он становится собой.</span></div></li>
       <li><div><span class="stp-t">Набивка</span><span class="stp-d">По расчёту под вашего малыша.</span></div></li>
-      <li class="key"><div><span class="stp-t">Вес и рост<span class="key-chip">важный шаг</span></span><span class="stp-d">Взвешиваем и подгоняем до точных мерок. Именно этот шаг делает его вашим.</span></div></li>
+      <li class="key"><div><span class="stp-t">Вес и рост<span class="key-chip">важный шаг</span></span><span class="stp-d">Взвешиваем и подгоняем до точных мерок вашего малыша. Именно этот шаг делает игрушку — вашей.</span></div></li>
       <li><div><span class="stp-t">Сборка</span><span class="stp-d">Пришиваем ручки и голову. Возьмите на руки — и почувствуйте 🤍</span></div></li>
     </ol>
   </div>
@@ -454,8 +442,8 @@ footer .logo-ph{margin-bottom:12px}
 <section>
   <div class="wrap reveal">
     <p class="eyebrow" style="text-align:center">Галерея</p>
-    <h2 style="text-align:center;margin-bottom:8px">Таких Мишек уже обнимают</h2>
-    <p class="lead" style="text-align:center;max-width:48ch;margin:0 auto 22px">Мишки, которых Дарья сшила на заказ для мам. Ваш будет таким же — только с мерками вашего малыша.</p>
+    <h2 style="text-align:center;margin-bottom:8px">Именно таких малышей вы сможете создать</h2>
+    <p class="lead" style="text-align:center;max-width:48ch;margin:0 auto 22px">Все игрушки в галерее сшила Дарья. После мастер-класса вы сможете создать своего малыша — по первым меркам вашего ребёнка. Он будет похожим и в то же время единственным.</p>
     <div class="gallery">
       <div class="img-ph"><img src="mishka-1.jpeg" alt="Мишка Марковки, сшитый на заказ"></div>
       <div class="img-ph"><img src="mishka-2.jpeg" alt="Мишка Марковки, сшитый на заказ"></div>
@@ -476,9 +464,9 @@ footer .logo-ph{margin-bottom:12px}
       <div class="price-amount">1 700 ₽</div>
       <div class="price-badge">Вы уже в списке ожидания 🤍</div>
       <ul class="price-incl">
-        <li>Персональные выкройки под мерки малыша</li>
+        <li>Выкройки по первым меркам вашего ребёнка</li>
+        <li>Каждый этап создания — с видео</li>
         <li>Выкройка ромпера и воротничка в подарок</li>
-        <li>Пошаговый мастер-класс с видео-сопровождением</li>
         <li>Список материалов с прямыми ссылками</li>
         <li>Обратная связь от Дарьи</li>
         <li>PDF навсегда — доступ бессрочный</li>
@@ -489,7 +477,7 @@ footer .logo-ph{margin-bottom:12px}
         <label for="agree">Я ознакомлен(а) и согласен(на) с <a href="oferta.html" target="_blank" rel="noopener">офертой</a> и <a href="policy.html" target="_blank" rel="noopener">политикой обработки персональных данных</a></label>
       </div>
       <p class="consent-warn" id="agreeWarn" role="alert">Пожалуйста, подтвердите согласие — поставьте галочку выше</p>
-      <a class="btn btn-primary" href="#price" rel="noopener" id="buyBtn">Забрать МК за 1 700 ₽</a>
+      <a class="btn btn-primary" href="#price" rel="noopener" id="buyBtn">Забрать за 1 700 ₽</a>
     </div>
   </div>
 </section>
@@ -505,14 +493,14 @@ footer .logo-ph{margin-bottom:12px}
 <section>
   <div class="wrap reveal">
     <div class="warm-plate final">
-      <h2>Тот вес, который ни с чем не спутать</h2>
-      <p class="lead">Руки помнят. Дайте им возможность помнить всегда.</p>
-      <a class="btn btn-warm" href="#price">Хочу сшить своего Мишку</a>
+      <h2>Сохраните воспоминание своими руками</h2>
+      <p class="lead">Первые дни проходят слишком быстро. Но тот самый вес можно создать заново — и держать на руках, когда захочется вернуться в начало.</p>
+      <a class="btn btn-warm" href="#price">Хочу создать своего малыша</a>
     </div>
   </div>
 </section>
 
-<a class="cta-sticky" href="#price">Забрать МК за 1 700 ₽ 🤍</a>
+<a class="cta-sticky" href="#price">Забрать за 1 700 ₽ 🤍</a>
 
 <footer>
   <img class="logo-foot" src="logo.PNG" alt="Марковка">
@@ -521,6 +509,7 @@ footer .logo-ph{margin-bottom:12px}
     Исполнитель: Смирнова&nbsp;Дарья&nbsp;Андреевна · ИНН&nbsp;250910781480<br>
     <a href="mailto:dasha.k510i@mail.ru">dasha.k510i@mail.ru</a>
   </div>
+  <div class="legal" style="margin-top:8px">© Марковка · Только для личного использования · Коммерческое использование запрещено</div>
 </footer>
 
 <script>
