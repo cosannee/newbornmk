@@ -234,6 +234,26 @@ a:focus-visible{outline:3px solid var(--cool-deep);outline-offset:3px;border-rad
 .price-incl li::before{content:"✓";position:absolute;left:2px;top:0;color:var(--cool-deep);font-weight:800}
 .price-note{color:var(--text-2);font-size:13.5px;max-width:44ch;margin:0 auto 20px;line-height:1.55}
 
+/* Скидка 14–15 августа */
+.sale-badge{
+  display:none;
+  align-items:center;justify-content:center;gap:6px;
+  background:var(--warm);border:1px solid var(--warm-line);color:#7a6a52;
+  font-size:12.5px;font-weight:600;letter-spacing:.2px;
+  padding:6px 14px;border-radius:100px;margin:0 auto 10px;
+  max-width:max-content;line-height:1.3;
+}
+.price-old{
+  display:none;
+  font-size:20px;font-weight:600;color:var(--text-2);
+  text-decoration:line-through;text-decoration-thickness:1.5px;
+  margin-bottom:-2px;
+}
+.sale-on .sale-badge{display:inline-flex}
+.sale-on .price-old{display:block}
+.sale-until{display:none;color:#a98d6f;font-size:13px;font-weight:600;margin:-2px 0 12px}
+.sale-on .sale-until{display:block}
+
 /* Consent checkbox */
 .consent{display:flex;align-items:flex-start;gap:9px;max-width:330px;margin:0 auto 10px;text-align:left}
 .consent input[type=checkbox]{flex:0 0 auto;width:18px;height:18px;margin-top:2px;accent-color:var(--cool-deep);cursor:pointer}
@@ -458,7 +478,10 @@ footer .logo-ph{margin-bottom:12px}
   <div class="wrap reveal">
     <div class="card price-card price-hl">
       <p class="eyebrow">Стоимость</p>
-      <div class="price-amount">2 500 ₽</div>
+      <div class="sale-badge" id="saleBadge">Скидка 500 ₽ — только 14 и 15 августа</div>
+      <div class="price-old" id="priceOld">2 500 ₽</div>
+      <div class="price-amount" id="priceAmount">2 500 ₽</div>
+      <p class="sale-until" id="saleUntil">Цена со скидкой действует до конца 15 августа</p>
       <ul class="price-incl">
         <li>Выкройки по первым меркам вашего ребёнка</li>
         <li>Каждый этап создания — с видео</li>
@@ -496,7 +519,7 @@ footer .logo-ph{margin-bottom:12px}
   </div>
 </section>
 
-<a class="cta-sticky" href="#price">Забрать за 2 500 ₽ 🤍</a>
+<a class="cta-sticky" href="#price" id="stickyCta">Забрать за 2 500 ₽ 🤍</a>
 
 <footer>
   <img class="logo-foot" src="logo.PNG" alt="Марковка">
@@ -509,6 +532,48 @@ footer .logo-ph{margin-bottom:12px}
 </footer>
 
 <script>
+/* ░░░ Скидка 500 ₽ — только 14 и 15 августа (по московскому времени) ░░░ */
+(function(){
+  var SALE_YEAR=2026;          /* год акции */
+  var SALE_MONTH=8;            /* август */
+  var SALE_DAYS=[14,15];       /* дни акции */
+  var PRICE_FULL=2500;
+  var PRICE_SALE=2000;         /* 2500 − 500 */
+  /* Ссылка на оплату со скидкой. Оставьте пустой строкой — тогда будет
+     использована обычная ссылка. Вставьте сюда ссылку payform на 2000 ₽. */
+  var SALE_PAY_URL='';
+
+  /* текущая дата по Москве (UTC+3) независимо от часового пояса посетителя */
+  var now=new Date();
+  var msk=new Date(now.getTime()+now.getTimezoneOffset()*60000+3*3600000);
+  var isSale = msk.getFullYear()===SALE_YEAR
+            && (msk.getMonth()+1)===SALE_MONTH
+            && SALE_DAYS.indexOf(msk.getDate())!==-1;
+
+  function money(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' ₽';}
+
+  var amount=document.getElementById('priceAmount');
+  var old=document.getElementById('priceOld');
+  var buy=document.getElementById('buyBtn');
+  var sticky=document.getElementById('stickyCta');
+  var card=document.querySelector('.price-card');
+
+  if(isSale){
+    if(card)card.classList.add('sale-on');
+    if(amount)amount.textContent=money(PRICE_SALE);
+    if(old)old.textContent=money(PRICE_FULL);
+    if(buy){
+      buy.textContent='Забрать со скидкой';
+      if(SALE_PAY_URL)buy.href=SALE_PAY_URL;
+    }
+    if(sticky)sticky.textContent='Забрать со скидкой 🤍';
+  }else{
+    if(amount)amount.textContent=money(PRICE_FULL);
+    if(buy)buy.textContent='Забрать за '+money(PRICE_FULL);
+    if(sticky)sticky.textContent='Забрать за '+money(PRICE_FULL)+' 🤍';
+  }
+})();
+
 (function(){
   var els=document.querySelectorAll('.reveal');
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
